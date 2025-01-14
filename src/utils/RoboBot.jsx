@@ -11,7 +11,7 @@ import { Float, useGLTF } from '@react-three/drei'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
-const Target = (props) => {
+const RoboBot = (props) => {
   const { nodes, materials } = useGLTF('/models/sci_-_fi_flying_robot..glb')
     const target = useRef();
 
@@ -31,7 +31,7 @@ const Target = (props) => {
     })
 
   return (
-    <Float floatIntensity={0.2}>
+    <Float floatIntensity={2}>
       <group {...props} scale={0.22} rotation={[-Math.PI / 1.8, 0, 0]} ref={target}>
         <mesh
           castShadow
@@ -130,4 +130,4 @@ const Target = (props) => {
 
 useGLTF.preload('/models/sci_-_fi_flying_robot..glb')
 
-export default Target
+export default RoboBot

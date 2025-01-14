@@ -5,10 +5,11 @@ import HackerRoom from "../utils/HackerRoom"
 import CanvasLoader from "../utils/CanvasLoader"
 import { Leva, useControls } from "leva"
 import { useMediaQuery } from "react-responsive"
-import Target from "../utils/Target"
+import RoboBot from "../utils/RoboBot"
 import { responsiveSizes } from "../constants"
-
 import ReactLogo from "../utils/ReactLogo"
+import HeroCamera from "../utils/HeroCamera"
+import Button from "./Button"
 
 const Hero = () => {
 
@@ -72,8 +73,9 @@ const Hero = () => {
             <Canvas className="w-full h-full">
                 <Suspense fallback={<CanvasLoader/>}>
 
-                <PerspectiveCamera makeDefault position={[0,0,30]}/>
-                <HackerRoom 
+                <PerspectiveCamera makeDefault position={[0,0,13]}/>
+                <HeroCamera isMobile={isMobile}>
+                <HackerRoom
                     scale={responsive.deskScale} 
                     position={responsive.deskPosition} 
                     rotation={[0,-Math.PI,0]} 
@@ -83,14 +85,21 @@ const Hero = () => {
                     // position={[c.positionX,c.positionY,c.positionZ]}
                     // rotation={[c.rotationX,c.rotationY,c.rotationZ]}
                 />
+                </HeroCamera>
                 <group>
-                    <Target position={responsive.targetPosition}/>
+                    <RoboBot position={responsive.roboBotPosition}/>
                     <ReactLogo position={responsive.reactLogoPosition}/>
                 </group>
                 <ambientLight intensity={1}/>
                 <directionalLight position={[10,10,10]} intensity={0.5}/>
                 </Suspense>
             </Canvas>
+        </div>
+
+        <div className=" absolute left-0 right-0 bottom-7 w-full z-10 c-space flex justify-center items-center ">
+                <a href="#contact" className="w-fit">
+                    <Button name="Let's Work Together" />
+                </a>
         </div>
     </section>
   )
