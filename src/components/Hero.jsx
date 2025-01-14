@@ -6,6 +6,9 @@ import CanvasLoader from "../utils/CanvasLoader"
 import { Leva, useControls } from "leva"
 import { useMediaQuery } from "react-responsive"
 import Target from "../utils/Target"
+import { responsiveSizes } from "../constants"
+
+import ReactLogo from "../utils/ReactLogo"
 
 const Hero = () => {
 
@@ -52,6 +55,8 @@ const Hero = () => {
     const isMobile = useMediaQuery({maxWidth:786});
     const isTablet = useMediaQuery({minWidth:768, maxWidth:1024})
 
+    const responsive = responsiveSizes(isSmall,isMobile,isTablet);
+
   return (
     <section className="min-h-screen w-full flex flex-col relative">
         <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
@@ -69,8 +74,8 @@ const Hero = () => {
 
                 <PerspectiveCamera makeDefault position={[0,0,30]}/>
                 <HackerRoom 
-                    scale={isSmall?0.05:isMobile?0.06:0.065} 
-                    position={isSmall?[0.5,-4.5,0]:[0.25,-5.5,0]} 
+                    scale={responsive.deskScale} 
+                    position={responsive.deskPosition} 
                     rotation={[0,-Math.PI,0]} 
 
                     //for development only to find perfect fit for for model
@@ -78,9 +83,10 @@ const Hero = () => {
                     // position={[c.positionX,c.positionY,c.positionZ]}
                     // rotation={[c.rotationX,c.rotationY,c.rotationZ]}
                 />
-                {/* <group>
-                    <Target position={0.2}/>
-                </group> */}
+                <group>
+                    <Target position={responsive.targetPosition}/>
+                    <ReactLogo position={responsive.reactLogoPosition}/>
+                </group>
                 <ambientLight intensity={1}/>
                 <directionalLight position={[10,10,10]} intensity={0.5}/>
                 </Suspense>
