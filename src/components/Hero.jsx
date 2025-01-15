@@ -96,7 +96,7 @@ const Hero = () => {
             </Canvas>
         </div>
 
-        <div className=" absolute left-0 right-0 bottom-7 w-full z-10 c-space flex justify-center items-center ">
+        <div className=" absolute left-0 right-0 bottom-5 w-full z-10 c-space flex justify-center items-center ">
                 <a href="#contact" className="w-fit">
                     <Button name="Let's Work Together" />
                 </a>
