@@ -13,11 +13,10 @@ const About = () => {
   const globeRef = useRef();
 
   useEffect(() => {
-    // Setting the initial camera position after component mounts
-    if (globeRef.current) {
+     if (globeRef.current) {
       globeRef.current.pointOfView(
-        { lat: 20.5037, lng: 78.9269 }, // Set latitude and longitude
-        2000 // Adjust the zoom level (altitude)
+        { lat: 20.5037, lng: 78.9269 }, 
+        2000 
       );
     }
   }, []);
@@ -64,7 +63,7 @@ const About = () => {
 
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/tech-stack.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain bg-black-200" />
+            <img src="assets/tech-stack.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-cover bg-black-200" />
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
@@ -89,20 +88,18 @@ const About = () => {
                 cameraOptions={{
                   lat: 20.5037,
                   lng: 78.9269,
-                  altitude: 2, // Controls the zoom level (higher is further out)
-                  heading: 0,  // Optional, to set the camera heading angle
-                  pitch: 0,    // Optional, to set the camera pitch (tilt)
+
                 }}
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
                 labelsData={[{ lat: 20.5037, lng: 78.9269, text: 'Akash is here', color: 'white', size: 2000 }]}
-                labelSize={5}
+                labelSize={4 }
               />
             </div>
-            <div>
+            <div className='flex items-center flex-col'>
               <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
-              <p className="grid-subtext mb-8">I'm based in India, and open to remote work worldwide.</p>
-              <Button name="Contact Me"  />
+              <p className="grid-subtext mb-8 w-">I'm based in India, and open to remote work worldwide.</p>
+              <Button name="Contact Me" customStyle=" mt-5 w-56" />
             </div>
           </div>
         </div>

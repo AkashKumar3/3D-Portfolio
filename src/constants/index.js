@@ -35,3 +35,70 @@ export const responsiveSizes = (isSmall, isMobile, isTablet) => {
       roboBotPosition: isSmall ? [-4, 4, -10] : isMobile ? [-6, 5, -10] : isTablet ? [-11, 3, -10] : [-13, 3, -10],
     };
   };
+
+  export const myProjects = [
+    {
+      title: 'Aarogya - Exercise Platform',
+      desc: 'Aarogya is an innovative platform focused on providing personalized exercise routines and wellness plans. It helps users stay fit by offering a variety of exercises that they can easily follow and track.',
+      subdesc:
+        'Developed using React.js, Tailwind CSS, JavaScript, Aarogya is built with performance and scalability in mind. The platform ensures a seamless experience for users looking to improve their physical health through easy-to-follow exercise plans.',
+      href: 'https://akashkumar3.github.io/Aarogya-Exercises',
+      video: '/myProjectsAssets/projectsVideo/aarogya.mp4', 
+      logo: '/myProjectsAssets/projectsLogo/aarogya.png', 
+      logoStyle: {
+        backgroundColor: '#1A2D31', 
+        border: '0.2px solid #214B54', 
+        boxShadow: '0px 0px 60px 0px #3A7260', 
+      },
+      spotlight: '/myProjectsAssets/spotlight1.png', 
+      tags: [
+        {
+          id: 1,
+          name: 'React.js',
+          path: '/myProjectsAssets/react.svg',
+        },
+        {
+          id: 2,
+          name: 'TailwindCSS',
+          path: '/myProjectsAssets/tailwindcss.png',
+        },
+        {
+          id: 3,
+          name: 'JavaScript',
+          path: '/myProjectsAssets/js.png',
+        },
+      ],
+    },
+    {
+      title: 'Mercent Console - Exercise Platform',
+      desc: 'Aarogya is an innovative platform focused on providing personalized exercise routines and wellness plans. It helps users stay fit by offering a variety of exercises that they can easily follow and track.',
+      subdesc:
+        'Developed using React.js, Tailwind CSS, JavaScript, Aarogya is built with performance and scalability in mind. The platform ensures a seamless experience for users looking to improve their physical health through easy-to-follow exercise plans.',
+      href: 'https://akashkumar3.github.io/Aarogya-Exercises',
+      video: '/myProjectsAssets/projectsVideo/aarogya.mp4', 
+      logo: '/myProjectsAssets/projectsLogo/aarogya.png', 
+      logoStyle: {
+        backgroundColor: '#1A2D31', 
+        border: '0.2px solid #214B54', 
+        boxShadow: '0px 0px 60px 0px #3A7260', 
+      },
+      spotlight: '/myProjectsAssets/spotlight1.png', 
+      tags: [
+        {
+          id: 1,
+          name: 'React.js',
+          path: '/myProjectsAssets/react.svg',
+        },
+        {
+          id: 2,
+          name: 'TailwindCSS',
+          path: '/myProjectsAssets/tailwindcss.png',
+        },
+        {
+          id: 3,
+          name: 'JavaScript',
+          path: '/myProjectsAssets/js.png',
+        },
+      ],
+    },
+  ];
