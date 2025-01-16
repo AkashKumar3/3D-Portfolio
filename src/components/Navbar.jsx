@@ -25,10 +25,11 @@ const Navbar = () => {
                 </a>
 
                 <button onClick={toggleMenu} className="text-neutral-400 hover:color-white focus:outline-none sm:hidden flex" aria-label="Toggle menu">
-                  {isOpen ? <GiHamburgerMenu color="white" /> : <GiSplitCross color="white"/>}
+                  {isOpen ? <GiSplitCross color="white"/>:<GiHamburgerMenu color="white" />}
                 </button>
 
                 <nav className="sm:flex hidden">
+
                   <NavItems/>
                 </nav>
             </div>

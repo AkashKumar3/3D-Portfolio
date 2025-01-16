@@ -1,7 +1,6 @@
 import React, { Suspense } from "react"
 import { PerspectiveCamera } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
-import HackerRoom from "../utils/HackerRoom"
 import CanvasLoader from "../utils/CanvasLoader"
 import { Leva, useControls } from "leva"
 import { useMediaQuery } from "react-responsive"
@@ -10,6 +9,7 @@ import { responsiveSizes } from "../constants"
 import ReactLogo from "../utils/ReactLogo"
 import HeroCamera from "../utils/HeroCamera"
 import Button from "./Button"
+import ModernOffice from "../utils/ModernOffice"
 
 const Hero = () => {
 
@@ -59,12 +59,12 @@ const Hero = () => {
     const responsive = responsiveSizes(isSmall,isMobile,isTablet);
 
   return (
-    <section className="min-h-screen w-full flex flex-col relative">
+    <section className="min-h-screen w-full flex flex-col relative" id="home">
         <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
             <p className="sm:text-3xl text-2xl text-white font-generalsans text-center font-medium">
                 Hi, am Akash Kumar <span className="waving-hand">👋🏻</span>
             </p>
-            <p className="hero_tag text-gray_gradient">MERN Stack Developer</p>
+            <p className="hero_tag text-gray_gradient">Full Stack Developer</p>
         </div>
         <div className="w-full h-full absolute inset-0">
 
@@ -75,10 +75,10 @@ const Hero = () => {
 
                 <PerspectiveCamera makeDefault position={[0,0,13]}/>
                 <HeroCamera isMobile={isMobile}>
-                <HackerRoom
+                <ModernOffice
                     scale={responsive.deskScale} 
                     position={responsive.deskPosition} 
-                    rotation={[0,-Math.PI,0]} 
+                    rotation={responsive.deskRotation} 
 
                     //for development only to find perfect fit for for model
                     // scale={[c.scale,c.scale,c.scale]}
@@ -90,13 +90,13 @@ const Hero = () => {
                     <RoboBot position={responsive.roboBotPosition}/>
                     <ReactLogo position={responsive.reactLogoPosition}/>
                 </group>
-                <ambientLight intensity={1}/>
-                <directionalLight position={[10,10,10]} intensity={0.5}/>
+                <ambientLight intensity={2}/>
+                <directionalLight position={[10,10,10]} intensity={2}/>
                 </Suspense>
             </Canvas>
         </div>
 
-        <div className=" absolute left-0 right-0 bottom-5 w-full z-10 c-space flex justify-center items-center ">
+        <div className=" absolute left-0 right-0 bottom-12 w-full z-10 c-space flex justify-center items-center ">
                 <a href="#contact" className="w-fit">
                     <Button name="Let's Work Together" />
                 </a>

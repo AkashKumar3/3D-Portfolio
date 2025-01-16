@@ -1,5 +1,9 @@
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import { myProjects } from '../constants'
+import { Canvas } from '@react-three/fiber';
+import { Center, OrbitControls } from '@react-three/drei';
+import CanvasLoader from '../utils/CanvasLoader'
+import ProjectTv from '../utils/ProjectTv';
 
 const projectCount = myProjects.length;
 
@@ -16,8 +20,8 @@ const Projects = () => {
     })
   }
   return (
-    <section className='c-space my-20'>
-        <p className='head-text'>My Work</p>
+    <section className='c-space my-20' id='projects'>
+        <p className='head-text'>My Projects</p>
         <div className='grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full'>
             <div className='flex flex-col gap-5 relative sm:p-10 py-10 px- shadow-2xl shadow-black-200'>
                 <div className='absolute top-0 right-0'>
@@ -52,6 +56,20 @@ const Projects = () => {
                     <img src="/assets/right-arrow.png" alt="right arrow" className='w-4 h-4' />
                     </button>
                 </div>
+            </div>
+            <div className='border border-black-300 bg-black-200 rounded-lg h-96 md:h-full'>
+                <Canvas>
+                    <ambientLight intensity={Math.PI}/>
+                    <directionalLight position={[10,10,5]} />
+                  <Center>
+                    <Suspense fallback={<CanvasLoader/>}>
+                    <group scale={2} position={[0,-3,0]} rotation={[0,-0.1,0]}>
+                      <ProjectTv video={currentProject.video}/>
+                    </group>
+                    </Suspense>
+                  </Center>
+                  <OrbitControls maxPolarAngle={Math.PI/2}/>
+                </Canvas>
             </div>
         </div>
     </section>
