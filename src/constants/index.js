@@ -74,19 +74,19 @@ export const responsiveSizes = (isSmall, isMobile, isTablet) => {
       ],
     },
     {
-      title: 'Mercent Console - Exercise Platform',
-      desc: 'Aarogya is an innovative platform focused on providing personalized exercise routines and wellness plans. It helps users stay fit by offering a variety of exercises that they can easily follow and track.',
+      title: 'Merchant Console - E-commerce',
+      desc: 'Merchant Console is a dynamic and user-friendly platform designed for managing and monitoring e-commerce stores. It provides tools for inventory management, order tracking, and analytics to enhance the efficiency of online businesses.',
       subdesc:
-        'Developed using React.js, Tailwind CSS, JavaScript, Aarogya is built with performance and scalability in mind. The platform ensures a seamless experience for users looking to improve their physical health through easy-to-follow exercise plans.',
-      href: 'https://akashkumar3.github.io/Aarogya-Exercises',
-      video: '', 
-      logo: '/myProjectsAssets/projectsLogo/aarogya.png', 
+        'Built using React.js, Tailwind CSS, and JavaScript, Merchant Console offers a responsive, intuitive interface for e-commerce merchants. It ensures that store owners can easily track sales, manage products, and analyze data for better decision-making.',
+      href: 'https://akashkumar3.github.io/Merchant-Console/ecommerce',
+      video: '/myProjectsAssets/projectsVideo/merchent-console.mp4', 
+      logo: '/myProjectsAssets/projectsLogo/merchant-console.png', 
       logoStyle: {
-        backgroundColor: '#1A2D31', 
-        border: '0.2px solid #214B54', 
-        boxShadow: '0px 0px 60px 0px #3A7260', 
+        backgroundColor: '#2A3D45',
+        border: '0.2px solid #3B5C68',
+        boxShadow: '0px 0px 60px 0px #4F7380',
       },
-      spotlight: '/myProjectsAssets/spotlight1.png', 
+      spotlight: '/myProjectsAssets/spotlight3.png', 
       tags: [
         {
           id: 1,
@@ -104,7 +104,8 @@ export const responsiveSizes = (isSmall, isMobile, isTablet) => {
           path: '/myProjectsAssets/js.png',
         },
       ],
-    },
+    }
+    
   ];
 
 
